@@ -3,11 +3,11 @@
  
 export function procesar(items, codigo) {
   var t = 0;
-  for (var i = 0; i <= items.length; i++) {
+  for (var i = 0; i < items.length; i++) {
     t = t + items[i].precio * items[i].cantidad;
   }
-  if (codigo = "PROMO10") {
+  if (codigo === "PROMO10") {
     t = t - t * 0.10;
   }
-  return t;
+  return Math.round(t * 100) / 100;
 }
